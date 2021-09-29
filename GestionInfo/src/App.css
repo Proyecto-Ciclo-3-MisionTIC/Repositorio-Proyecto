@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: "Roboto";
+}
+
+ul {
+  list-style: none;
+}
+.derecha {
+  background-color: white;
+  height: 100vh;
+  width: 50%;
+}
+
+.izquierda {
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 100vh;
+  text-align: center;
+}
+
+.pantalladividida {
+  display: flex;
+}
+
+.Label {
+  background-color: rgb(242, 239, 239);
+  border-width: 1px;
+  height: 50%;
+  width: 45%;
+  text-align: center;
+  margin: 200px 200px;
+  border-radius: 10px;
+  border: 0.1px solid rgb(107, 105, 105);
+  box-shadow: 1px 1px rgb(19, 18, 18);
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.user {
+  margin: 20px 20px 10px 0px;
+}
+.password {
+  margin: 30px 20px 2px 0px;
+  border-radius: 5px;
+}
+
+.login {
+  cursor: pointer;
+  margin: 40px 10px 5px 10px;
+}
+
+.mainbutton {
+  background-color: rgb(68, 68, 233);
+  color: white;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 5px;
+  width: 140px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+a {
+  font-size: 12px;
+  margin-right: 0px;
+}
+
+.forget {
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-right: 6px;
+}
+.logo {
+  height: 40px;
+  width: 45px;
+  margin: 20px 30px 10px 10px;
+}
+
+.crear {
+  margin-top: 1px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  background: #294888;
+  color: white;
+  box-shadow: 4px 4px 8px #525252;
+  justify-content: space-between;
+}
+
+.menu > li {
+  border-right: 1px solid #ccc;
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+}
+
+.menu > li:hover {
+  cursor: pointer;
+  color: #7fc2ea;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.menu > li:last-child {
+  border-right: 1px solid transparent;
+}
+
+.logoImg {
+  margin: 10px auto;
+  display: block;
+  max-width: 35%;
+}
+
+form {
+  background: #d8dee8;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
