@@ -1,6 +1,6 @@
 import logo from '../logo4r.png';
 
-function Menu() {
+function Navbar() {
   return (
     <div className="App">
       <img src={logo} alt="technology accesories" className="logoImg"/>
@@ -15,4 +15,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default Navbar;
