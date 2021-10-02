@@ -147,3 +147,13 @@ form {
   justify-content: space-between;
   list-style: none;
 }
+
+.TituloFormProductos{
+  justify-content: center;
+  display: flex;
+}
+
+
+.carousel {
+  background: pink;
+}
