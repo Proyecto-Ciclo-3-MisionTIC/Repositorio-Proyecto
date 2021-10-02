@@ -4,13 +4,13 @@ import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const ListaProductosTabla = () => {
+const ListaVentasTabla = () => {
     return (
-      <div>
+        <div>
         <section > 
         <ui className="OpcionesProductos">
           <li><div style={{margin: "30px" }}>
-          <Link to='/agregarproductos'> <Button color="primary">Adicionar producto</Button>
+          <Link to='/agregarventas'> <Button color="primary">Adicionar producto</Button>
           </Link>
           </div></li>
           <li><div style={{margin: "30px" }}> <Button color="primary">Eliminar producto</Button></div></li>
@@ -21,9 +21,14 @@ const ListaProductosTabla = () => {
         <Table striped>
         <thead>
           <tr>
-            <th>Código</th>
-            <th>Descripción</th>
-            <th>Valor Unitario</th>
+            <th>Código venta</th>
+            <th>Identificación producto</th>
+            <th>Valor venta</th>
+            <th>Cantidad</th>
+            <th>Fecha venta</th>
+            <th>Documento cliente</th>
+            <th>Nombre cliente</th>
+            <th>ID Vendedor</th>
             <th>Estado</th>
           </tr>
         </thead>
@@ -31,20 +36,35 @@ const ListaProductosTabla = () => {
           <tr>
             <th scope="row">0001</th>
             <td>Pantalla LG 15"</td>
-            <td>300000</td>
-            <td>Disponible</td>
+            <td>3000000</td>
+            <td>10</td>
+            <td>10/02/2021</td>
+            <td>1100200</td>
+            <td>Freddy Mercury</td>
+            <td>0123</td>
+            <td>Entregado</td>
           </tr>
           <tr>
-            <th scope="row">0002</th>
+          <th scope="row">0001</th>
             <td>Pantalla Acer 15"</td>
-            <td>200000</td>
-            <td>No disponible</td>
+            <td>2000000</td>
+            <td>10</td>
+            <td>10/04/2021</td>
+            <td>1200200</td>
+            <td>Marvin Gaye</td>
+            <td>0124</td>
+            <td>Entregado</td>
           </tr>
           <tr>
-            <th scope="row">0003</th>
+          <th scope="row">0001</th>
             <td>Pantalla Samsung 15"</td>
-            <td>350000</td>
-            <td>Disponible</td>
+            <td>3500000</td>
+            <td>10</td>
+            <td>10/01/2021</td>
+            <td>1300200</td>
+            <td>Robert Plant</td>
+            <td>0125</td>
+            <td>Alistamiento</td>
           </tr>
         </tbody>
       </Table>
@@ -93,4 +113,4 @@ const ListaProductosTabla = () => {
     )
 }
 
-export default ListaProductosTabla
+export default ListaVentasTabla

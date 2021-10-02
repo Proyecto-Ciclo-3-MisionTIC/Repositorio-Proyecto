@@ -14,8 +14,9 @@ import AddProducts from "./pages/AddProducts";
 import SearchProducts from "./pages/SearchProducts";
 import UpdateProducts from "./pages/UpdateProducts";
 import DeleteProducts from "./pages/DeleteProducts";
+import AddSells from "./pages/AddSells";
+import ListSells from "./pages/ListSells";
 import Login from "./pages/Login";
-import Sells from "./pages/Sells";
 import Public from "./pages/Public";
 
 function App() {
@@ -43,11 +44,14 @@ function App() {
             </Switch>
           </AdmLayout>
         </Route> 
-        <Route path={['/sells']}>
+        <Route path={['/listarventas','/agregarventas']}>
           <PrivateLayout>
             <Switch>
-              <Route path={['/sells']}>
-                <Sells/>
+            <Route path={['/listarventas']}>
+                <ListSells/>
+              </Route> 
+              <Route path={['/agregarventas']}>
+                <AddSells/>
               </Route> 
             </Switch>
           </PrivateLayout>
