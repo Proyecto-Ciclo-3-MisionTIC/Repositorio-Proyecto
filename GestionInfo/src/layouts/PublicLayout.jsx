@@ -1,9 +1,10 @@
 import React from 'react'
+import NavbarPublico from "../components/NavbarPublico";
 
 const PublicLayout = () => {
     return (
         <div>
-            PrivateLayout
+            <NavbarPublico/>
         </div>
     )
 }

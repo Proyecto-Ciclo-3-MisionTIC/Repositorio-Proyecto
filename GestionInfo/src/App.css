@@ -29,9 +29,10 @@ ul {
   background-color: rgb(242, 239, 239);
   border-width: 1px;
   height: 50%;
-  width: 45%;
+  width: 35%;
   text-align: center;
-  margin: 200px 200px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 10px;
   border: 0.1px solid rgb(107, 105, 105);
   box-shadow: 1px 1px rgb(19, 18, 18);
@@ -52,7 +53,8 @@ input {
 
 .login {
   cursor: pointer;
-  margin: 40px 10px 5px 10px;
+  margin: 20px 10px 5px 10px;
+  font-size: 14px;
 }
 
 .mainbutton {
@@ -84,7 +86,7 @@ a {
 
 .crear {
   margin-top: 1px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -125,4 +127,23 @@ form {
   padding: 30px;
   margin: 0 auto;
   border-radius: 5px;
+}
+
+.logoGoogle{
+  margin: auto;
+  max-width: 5%;
+}
+
+.Google{
+  margin-bottom: 2px;
+}
+.Google> li:hover{
+  cursor: pointer;
+}
+
+.OpcionesProductos{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none;
 }

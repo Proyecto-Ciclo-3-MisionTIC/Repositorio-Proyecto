@@ -6,10 +6,10 @@ function Navbar() {
       <img src={logo} alt="technology accesories" className="logoImg"/>
       <ul className="menu">
           <li>Inicio</li>
-          <li>Administracion de productos</li>
-          <li>Administracion de ventas</li>
-          <li>Gestion de usuarios</li>
-          <li>Salir</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
       </ul>
     </div>
   );
