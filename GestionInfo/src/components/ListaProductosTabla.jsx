@@ -8,15 +8,9 @@ const ListaProductosTabla = () => {
     return (
       <div>
         <section > 
-        <ui className="OpcionesProductos">
-          <li><div style={{margin: "30px" }}>
-          <Link to='/agregarproductos'> <Button color="primary">Adicionar producto</Button>
-          </Link>
-          </div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Eliminar producto</Button></div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Buscar producto</Button></div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Actualizar producto</Button></div></li>
-        </ui>
+          <Link to='/agregarproductos'>
+          <Button color="primary" size="lg">Adicionar producto</Button></Link>{' '}
+          <Link to='/buscarproductos'><Button color="secondary" size="lg">Buscar producto</Button></Link>
         </section>
         <Table striped>
         <thead>
@@ -25,6 +19,8 @@ const ListaProductosTabla = () => {
             <th>Descripción</th>
             <th>Valor Unitario</th>
             <th>Estado</th>
+            <th>Actualizar</th>
+            <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -33,19 +29,28 @@ const ListaProductosTabla = () => {
             <td>Pantalla LG 15"</td>
             <td>300000</td>
             <td>Disponible</td>
+            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
+            <th><Button color="danger">Eliminar producto</Button></th>
+            
           </tr>
           <tr>
             <th scope="row">0002</th>
             <td>Pantalla Acer 15"</td>
             <td>200000</td>
             <td>No disponible</td>
+            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
+            <th><Button color="danger">Eliminar producto</Button></th>
+            
           </tr>
           <tr>
             <th scope="row">0003</th>
             <td>Pantalla Samsung 15"</td>
             <td>350000</td>
             <td>Disponible</td>
+            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
+            <th><Button color="danger">Eliminar producto</Button></th>
           </tr>
+
         </tbody>
       </Table>
       <section style={{ display: "flex", width: "100%", justifyContent: "flex-end" }} >

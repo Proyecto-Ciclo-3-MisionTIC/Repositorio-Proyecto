@@ -4,19 +4,14 @@ import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
+
 const ListaVentasTabla = () => {
     return (
         <div>
-        <section > 
-        <ui className="OpcionesProductos">
-          <li><div style={{margin: "30px" }}>
-          <Link to='/agregarventas'> <Button color="primary">Adicionar producto</Button>
-          </Link>
-          </div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Eliminar producto</Button></div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Buscar producto</Button></div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Actualizar producto</Button></div></li>
-        </ui>
+        <section >
+          <Link to ='/agregarventa'>
+          <Button color="primary" size="lg">Adicionar venta</Button></Link>{' '}
+        <Link to = 'buscarventas'><Button color="secondary" size="lg">Buscar venta</Button></Link>
         </section>
         <Table striped>
         <thead>
@@ -30,6 +25,8 @@ const ListaVentasTabla = () => {
             <th>Nombre cliente</th>
             <th>ID Vendedor</th>
             <th>Estado</th>
+            <th>Actualizar</th>
+            <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -43,6 +40,8 @@ const ListaVentasTabla = () => {
             <td>Freddy Mercury</td>
             <td>0123</td>
             <td>Entregado</td>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
+            <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
           <tr>
           <th scope="row">0001</th>
@@ -54,6 +53,8 @@ const ListaVentasTabla = () => {
             <td>Marvin Gaye</td>
             <td>0124</td>
             <td>Entregado</td>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
+            <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
           <tr>
           <th scope="row">0001</th>
@@ -65,6 +66,8 @@ const ListaVentasTabla = () => {
             <td>Robert Plant</td>
             <td>0125</td>
             <td>Alistamiento</td>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
+            <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
         </tbody>
       </Table>
