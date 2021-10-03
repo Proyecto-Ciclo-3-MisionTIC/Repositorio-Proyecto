@@ -33,7 +33,7 @@ const ActualizarProductoForm = () => {
           >
             <Link to='/listarproductos'>
             <Button color="primary">Actualizar</Button>
-            </Link>Lin
+            </Link>
           </div>
         </Form>
       </div>
