@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../media/logo4r.png';
 
+
 const NavbarVendedor = () => {
     return (
         <div className="App">

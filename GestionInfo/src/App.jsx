@@ -19,12 +19,13 @@ import SearchSells from "./pages/SearchSells";
 import ListSells from "./pages/ListSells";
 import Login from "./pages/Login";
 import ListRols from "./pages/ListRols";
+import UpdateRols from "./pages/UpdateRols";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path={['/listarproductos','/agregarproductos','/buscarproductos','/actualizarproductos','/eliminarproductos','/listarroles' ]}>
+        <Route path={['/listarproductos','/agregarproductos','/buscarproductos','/actualizarproductos','/eliminarproductos','/listarroles', '/actualizarroles', '/listarventasadm','/agregarventasadm','/buscarventasadm', '/actualizarventasadm' ]}>
           <AdmLayout>
             <Switch>
             <Route path={['/listarproductos']}>
@@ -42,6 +43,21 @@ function App() {
               <Route path={['/listarroles']}>
                 <ListRols/>
               </Route>
+              <Route path={['/actualizarroles']}>
+                <UpdateRols/>
+              </Route>
+              <Route path={['/listarventasadm']}>
+                <ListSells/>
+              </Route> 
+              <Route path={['/agregarventasadm']}>
+                <AddSells/>
+              </Route> 
+              <Route path={['/buscarventasadm']}>
+                <SearchSells/>
+              </Route> 
+              <Route path={['/actualizarventasadm']}>
+                <UpdateSells/>
+              </Route> 
             </Switch>
           </AdmLayout>
         </Route> 

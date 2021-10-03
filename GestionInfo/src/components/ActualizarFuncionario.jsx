@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 const ActualizarFuncionario = () => {
     return (
@@ -39,7 +41,9 @@ const ActualizarFuncionario = () => {
           <div
             style={{ display: "flex", width: "100%", justifyContent: "flex-end" }}
           >
+            <Link to ='/listarroles'>
             <Button color="primary">Actualizar</Button>
+            </Link>
           </div>
         </Form>
       </div>

@@ -2,14 +2,16 @@ import React from 'react'
 import { Table } from 'reactstrap';
 import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 const ListaVentasTabla = () => {
     return (
         <div>
-        <section > 
-          <Button color="primary" size="lg">Adicionar venta</Button>{' '}
-<         Button color="secondary" size="lg">Buscar venta</Button>
+        <section >
+          <Link to ='/agregarventa'>
+          <Button color="primary" size="lg">Adicionar venta</Button></Link>{' '}
+        <Link to = 'buscarventas'><Button color="secondary" size="lg">Buscar venta</Button></Link>
         </section>
         <Table striped>
         <thead>
@@ -38,7 +40,7 @@ const ListaVentasTabla = () => {
             <td>Freddy Mercury</td>
             <td>0123</td>
             <td>Entregado</td>
-            <th><Button color="primary">Actualizar venta</Button></th>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
             <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
           <tr>
@@ -51,7 +53,7 @@ const ListaVentasTabla = () => {
             <td>Marvin Gaye</td>
             <td>0124</td>
             <td>Entregado</td>
-            <th><Button color="primary">Actualizar venta</Button></th>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
             <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
           <tr>
@@ -64,7 +66,7 @@ const ListaVentasTabla = () => {
             <td>Robert Plant</td>
             <td>0125</td>
             <td>Alistamiento</td>
-            <th><Button color="primary">Actualizar venta</Button></th>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
             <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
         </tbody>

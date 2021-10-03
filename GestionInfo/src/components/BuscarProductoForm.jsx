@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 const BuscarProductoForm = () => {
   return (
@@ -9,7 +10,9 @@ const BuscarProductoForm = () => {
           <li>
             <div style={{ margin: "30px" }}>
               {" "}
+              <Link to='/listarproductos'>
               <Button color="primary">Ver lista de productos</Button>
+              </Link>
             </div>
           </li>
         </ui>

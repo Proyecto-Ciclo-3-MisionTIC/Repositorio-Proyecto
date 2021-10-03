@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const ActualizarProductoForm = () => {
@@ -30,7 +31,9 @@ const ActualizarProductoForm = () => {
           <div
             style={{ display: "flex", width: "100%", justifyContent: "flex-end" }}
           >
+            <Link to='/listarproductos'>
             <Button color="primary">Actualizar</Button>
+            </Link>Lin
           </div>
         </Form>
       </div>

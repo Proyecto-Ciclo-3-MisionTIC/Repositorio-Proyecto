@@ -2,20 +2,22 @@ import React from 'react'
 import { Table } from 'reactstrap';
 import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const ListaProductosTabla = () => {
     return (
       <div>
         <section > 
-          <Button color="primary" size="lg">Adicionar producto</Button>{' '}
-<         Button color="secondary" size="lg">Buscar producto</Button>
+          <Link to='/agregarproductos'>
+          <Button color="primary" size="lg">Adicionar producto</Button></Link>{' '}
+          <Link to='/buscarproductos'><Button color="secondary" size="lg">Buscar producto</Button></Link>
         </section>
         <Table striped>
         <thead>
           <tr>
             <th>Código</th>
-            <th>Nombre</th>
-            <th>Rol</th>
+            <th>Descripción</th>
+            <th>Valor Unitario</th>
             <th>Estado</th>
             <th>Actualizar</th>
             <th>Eliminar</th>
@@ -24,29 +26,29 @@ const ListaProductosTabla = () => {
         <tbody>
           <tr>
             <th scope="row">0001</th>
-            <td>Juan Sebastian Ruiz Acero</td>
-            <td>Vendedor</td>
-            <td>Activo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
-            <th><Button color="danger">Eliminar funcionario</Button></th>
+            <td>Pantalla LG 15"</td>
+            <td>300000</td>
+            <td>Disponible</td>
+            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
+            <th><Button color="danger">Eliminar producto</Button></th>
             
           </tr>
           <tr>
             <th scope="row">0002</th>
-            <td>Alexander Ortiz</td>
-            <td>Administrador</td>
-            <td>Activo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
-            <th><Button color="danger">Eliminar funcionario</Button></th>
+            <td>Pantalla Acer 15"</td>
+            <td>200000</td>
+            <td>No disponible</td>
+            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
+            <th><Button color="danger">Eliminar producto</Button></th>
             
           </tr>
           <tr>
-          <th scope="row">0003</th>
-            <td>Pedro Mesa</td>
-            <td>Vendedor</td>
-            <td>Activo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
-            <th><Button color="danger">Eliminar funcionario</Button></th>
+            <th scope="row">0003</th>
+            <td>Pantalla Samsung 15"</td>
+            <td>350000</td>
+            <td>Disponible</td>
+            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
+            <th><Button color="danger">Eliminar producto</Button></th>
           </tr>
 
         </tbody>

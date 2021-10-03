@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 const ActualizarVenta = () => {
     return (
@@ -9,7 +10,9 @@ const ActualizarVenta = () => {
          <li>
            <div style={{ margin: "30px" }}>
              {" "}
+             <Link to = '/listarventas'>
              <Button color="primary">Ver lista de ventas</Button>
+             </Link>
            </div>
          </li>
        </ui>
@@ -101,7 +104,9 @@ const ActualizarVenta = () => {
          <div
            style={{ display: "flex", width: "100%", justifyContent: "flex-end" }}
          >
+           <Link to = '/listarventas'>
            <Button color="primary">Actualizar venta</Button>
+           </Link>
          </div>
        </Form>
      </div>

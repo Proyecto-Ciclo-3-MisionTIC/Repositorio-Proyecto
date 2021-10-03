@@ -2,6 +2,7 @@ import React from 'react'
 import { Table } from 'reactstrap';
 import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const ListaRolesTabla = () => {
     return (
@@ -11,7 +12,8 @@ const ListaRolesTabla = () => {
           <li>
             <div style={{ margin: "30px" }}>
               {" "}
-              <Button color="primary">Adicionar funcionario</Button>
+              <Link to = '/agregarfuncionario'>
+              <Button color="primary">Adicionar funcionario</Button></Link>
             </div>
           </li>
         </ui>
@@ -33,7 +35,7 @@ const ListaRolesTabla = () => {
             <td>Juan Sebastian Ruiz Acero</td>
             <td>Administrador</td>
             <td>Activo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
+            <th><Link to='/actualizarfuncionario'><Button color="primary">Actualizar funcionario</Button></Link></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
             
           </tr>
@@ -42,7 +44,7 @@ const ListaRolesTabla = () => {
             <td>Alexander Ortiz</td>
             <td>Vendedor</td>
             <td>Activo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
+            <th><Link to='/actualizarfuncionario'><Button color="primary">Actualizar funcionario</Button></Link></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
             
           </tr>
@@ -51,7 +53,7 @@ const ListaRolesTabla = () => {
             <td>Pedro Mesa</td>
             <td>Vendedor</td>
             <td>Activo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
+            <th><Link to='/actualizarfuncionario'><Button color="primary">Actualizar funcionario</Button></Link></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
           </tr>
 
@@ -60,7 +62,7 @@ const ListaRolesTabla = () => {
             <td>Diego Vidales</td>
             <td>Vendedor</td>
             <td>Activo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
+            <th><Link to='/actualizarfuncionario'><Button color="primary">Actualizar funcionario</Button></Link></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
             
           </tr>
@@ -70,7 +72,7 @@ const ListaRolesTabla = () => {
             <td>Jimy Sierra</td>
             <td>Vendedor</td>
             <td>Inactivo</td>
-            <th><Button color="primary">Actualizar funcionario</Button></th>
+            <th><Link to='/actualizarfuncionario'><Button color="primary">Actualizar funcionario</Button></Link></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
             
           </tr>
