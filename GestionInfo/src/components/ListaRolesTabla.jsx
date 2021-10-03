@@ -3,13 +3,19 @@ import { Table } from 'reactstrap';
 import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
-const ListaProductosTabla = () => {
+const ListaRolesTabla = () => {
     return (
-      <div>
-        <section > 
-          <Button color="primary" size="lg">Adicionar producto</Button>{' '}
-<         Button color="secondary" size="lg">Buscar producto</Button>
-        </section>
+        <div>
+         <section>
+        <ui className="OpcionesProductos">
+          <li>
+            <div style={{ margin: "30px" }}>
+              {" "}
+              <Button color="primary">Adicionar funcionario</Button>
+            </div>
+          </li>
+        </ui>
+      </section>
         <Table striped>
         <thead>
           <tr>
@@ -25,7 +31,7 @@ const ListaProductosTabla = () => {
           <tr>
             <th scope="row">0001</th>
             <td>Juan Sebastian Ruiz Acero</td>
-            <td>Vendedor</td>
+            <td>Administrador</td>
             <td>Activo</td>
             <th><Button color="primary">Actualizar funcionario</Button></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
@@ -34,7 +40,7 @@ const ListaProductosTabla = () => {
           <tr>
             <th scope="row">0002</th>
             <td>Alexander Ortiz</td>
-            <td>Administrador</td>
+            <td>Vendedor</td>
             <td>Activo</td>
             <th><Button color="primary">Actualizar funcionario</Button></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
@@ -47,6 +53,26 @@ const ListaProductosTabla = () => {
             <td>Activo</td>
             <th><Button color="primary">Actualizar funcionario</Button></th>
             <th><Button color="danger">Eliminar funcionario</Button></th>
+          </tr>
+
+          <tr>
+            <th scope="row">0004</th>
+            <td>Diego Vidales</td>
+            <td>Vendedor</td>
+            <td>Activo</td>
+            <th><Button color="primary">Actualizar funcionario</Button></th>
+            <th><Button color="danger">Eliminar funcionario</Button></th>
+            
+          </tr>
+
+          <tr>
+            <th scope="row">0002</th>
+            <td>Jimy Sierra</td>
+            <td>Vendedor</td>
+            <td>Inactivo</td>
+            <th><Button color="primary">Actualizar funcionario</Button></th>
+            <th><Button color="danger">Eliminar funcionario</Button></th>
+            
           </tr>
 
         </tbody>
@@ -96,4 +122,4 @@ const ListaProductosTabla = () => {
     )
 }
 
-export default ListaProductosTabla
+export default ListaRolesTabla

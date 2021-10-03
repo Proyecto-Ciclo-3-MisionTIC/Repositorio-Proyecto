@@ -4,14 +4,16 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 const AgregarVenta = () => {
     return (
     <div >
-        <section > 
+         <section>
         <ui className="OpcionesProductos">
-          <li><div style={{margin: "30px" }}> <Button color="primary">Ver lista de ventas</Button></div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Buscar venta</Button></div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Actualizar venta</Button></div></li>
-          <li><div style={{margin: "30px" }}> <Button color="primary">Eliminar venta</Button></div></li>
+          <li>
+            <div style={{ margin: "30px" }}>
+              {" "}
+              <Button color="primary">Ver lista de ventas</Button>
+            </div>
+          </li>
         </ui>
-        </section>
+      </section>
         <Form className="w-75">
           <FormGroup className="mb-3">
             <h2 className ='TituloFormProductos' > Adicionar venta </h2>

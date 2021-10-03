@@ -13,17 +13,19 @@ import ListProducts from "./pages/ListProducts";
 import AddProducts from "./pages/AddProducts";
 import SearchProducts from "./pages/SearchProducts";
 import UpdateProducts from "./pages/UpdateProducts";
-import DeleteProducts from "./pages/DeleteProducts";
+import UpdateSells from "./pages/UpdateSells";
 import AddSells from "./pages/AddSells";
+import SearchSells from "./pages/SearchSells";
 import ListSells from "./pages/ListSells";
 import Login from "./pages/Login";
 import Public from "./pages/Public";
+import ListRols from "./pages/ListRols";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path={['/listarproductos','/agregarproductos','/buscarproductos','/actualizarproductos','/eliminarproductos']}>
+        <Route path={['/listarproductos','/agregarproductos','/buscarproductos','/actualizarproductos','/eliminarproductos','/listarroles' ]}>
           <AdmLayout>
             <Switch>
             <Route path={['/listarproductos']}>
@@ -38,13 +40,13 @@ function App() {
               <Route path={['/actualizarproductos']}>
                 <UpdateProducts/>
               </Route>
-              <Route path={['/eliminarproductos']}>
-                <DeleteProducts/>
+              <Route path={['/listarroles']}>
+                <ListRols/>
               </Route>
             </Switch>
           </AdmLayout>
         </Route> 
-        <Route path={['/listarventas','/agregarventas']}>
+        <Route path={['/listarventas','/agregarventas','/buscarventas', '/actualizarventas' ]}>
           <PrivateLayout>
             <Switch>
             <Route path={['/listarventas']}>
@@ -52,6 +54,12 @@ function App() {
               </Route> 
               <Route path={['/agregarventas']}>
                 <AddSells/>
+              </Route> 
+              <Route path={['/buscarventas']}>
+                <SearchSells/>
+              </Route> 
+              <Route path={['/actualizarventas']}>
+                <UpdateSells/>
               </Route> 
             </Switch>
           </PrivateLayout>

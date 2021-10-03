@@ -12,24 +12,6 @@ const BuscarProductoForm = () => {
               <Button color="primary">Ver lista de productos</Button>
             </div>
           </li>
-          <li>
-            <div style={{ margin: "30px" }}>
-              {" "}
-              <Button color="primary">Adicionar producto</Button>
-            </div>
-          </li>
-          <li>
-            <div style={{ margin: "30px" }}>
-              {" "}
-              <Button color="primary">Actualizar producto</Button>
-            </div>
-          </li>
-          <li>
-            <div style={{ margin: "30px" }}>
-              {" "}
-              <Button color="primary">Eliminar producto</Button>
-            </div>
-          </li>
         </ui>
       </section>
       <Form className="w-75">
