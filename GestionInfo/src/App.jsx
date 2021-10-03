@@ -18,7 +18,6 @@ import AddSells from "./pages/AddSells";
 import SearchSells from "./pages/SearchSells";
 import ListSells from "./pages/ListSells";
 import Login from "./pages/Login";
-import Public from "./pages/Public";
 import ListRols from "./pages/ListRols";
 
 function App() {
@@ -64,22 +63,17 @@ function App() {
             </Switch>
           </PrivateLayout>
         </Route> 
-        <Route path={['/login']}>
+        <Route path={['/']}>
           <LoginLayout>
             <Switch>
-              <Route path={['/login']}>
+              <Route path={['/']}>
                 <Login/>
               </Route>
             </Switch>
           </LoginLayout>
         </Route>
-        <Route path={['/']}>
+        <Route>
           <PublicLayout>
-          <Switch>
-              <Route path={['/']}>
-                <Public/>
-              </Route>
-            </Switch>
           </PublicLayout>
         </Route>
 
