@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react'
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from 'react-router-dom';
 
-const BuscarProductoForm = () => {
-  return (
-    <div>
+const BuscarVenta = () => {
+    return (
+<div>
       <section>
         <ui className="OpcionesProductos">
           <li>
             <div style={{ margin: "30px" }}>
               {" "}
-              <Link to='/listarproductos'>
-              <Button color="primary">Ver lista de productos</Button>
+              <Link to='/listarventas'>
+              <Button color="primary">Ver lista de ventas</Button>
               </Link>
             </div>
           </li>
@@ -19,23 +19,33 @@ const BuscarProductoForm = () => {
       </section>
       <Form className="w-75">
         <FormGroup className="mb-3">
-          <h2 className="TituloFormProductos"> Buscar producto </h2>
-          <Label for="codigo">Busqueda por código</Label>
+          <h2 className="TituloFormProductos"> Buscar venta </h2>
+          <Label for="codigo">Busqueda por identificador de la venta</Label>
           <Input
             type="number"
             name="codigo"
             id="codigo"
-            placeholder="Inserte Código"
+            placeholder="Inserte identificador"
           />
         </FormGroup>
 
         <FormGroup className="mb-3">
-          <Label for="descripcion">Busqueda por descripción</Label>
+          <Label for="descripcion">Busqueda por nombre del ciente</Label>
           <Input
             type="text"
             name="descripcion"
             id="descripcion"
-            placeholder="Inserte Descripción"
+            placeholder="Inserte el nombre del cliente"
+          />
+        </FormGroup>
+
+        <FormGroup className="mb-3">
+          <Label for="descripcion">Busqueda por nombre del docoumento del ciente</Label>
+          <Input
+            type="text"
+            name="descripcion"
+            id="descripcion"
+            placeholder="Inserte el número del documento de identidad del cliente"
           />
         </FormGroup>
 
@@ -46,7 +56,7 @@ const BuscarProductoForm = () => {
         </div>
       </Form>
     </div>
-  );
-};
+    )
+}
 
-export default BuscarProductoForm;
+export default BuscarVenta

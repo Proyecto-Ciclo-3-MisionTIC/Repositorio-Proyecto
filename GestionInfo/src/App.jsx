@@ -13,16 +13,19 @@ import ListProducts from "./pages/ListProducts";
 import AddProducts from "./pages/AddProducts";
 import SearchProducts from "./pages/SearchProducts";
 import UpdateProducts from "./pages/UpdateProducts";
-import DeleteProducts from "./pages/DeleteProducts";
+import UpdateSells from "./pages/UpdateSells";
+import AddSells from "./pages/AddSells";
+import SearchSells from "./pages/SearchSells";
+import ListSells from "./pages/ListSells";
 import Login from "./pages/Login";
-import Sells from "./pages/Sells";
-import Public from "./pages/Public";
+import ListRols from "./pages/ListRols";
+import UpdateRols from "./pages/UpdateRols";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path={['/listarproductos','/agregarproductos','/buscarproductos','/actualizarproductos','/eliminarproductos']}>
+        <Route path={['/listarproductos','/agregarproductos','/buscarproductos','/actualizarproductos','/eliminarproductos','/listarroles', '/actualizarroles', '/listarventasadm','/agregarventasadm','/buscarventasadm', '/actualizarventasadm' ]}>
           <AdmLayout>
             <Switch>
             <Route path={['/listarproductos']}>
@@ -37,37 +40,56 @@ function App() {
               <Route path={['/actualizarproductos']}>
                 <UpdateProducts/>
               </Route>
-              <Route path={['/eliminarproductos']}>
-                <DeleteProducts/>
+              <Route path={['/listarroles']}>
+                <ListRols/>
               </Route>
+              <Route path={['/actualizarroles']}>
+                <UpdateRols/>
+              </Route>
+              <Route path={['/listarventasadm']}>
+                <ListSells/>
+              </Route> 
+              <Route path={['/agregarventasadm']}>
+                <AddSells/>
+              </Route> 
+              <Route path={['/buscarventasadm']}>
+                <SearchSells/>
+              </Route> 
+              <Route path={['/actualizarventasadm']}>
+                <UpdateSells/>
+              </Route> 
             </Switch>
           </AdmLayout>
         </Route> 
-        <Route path={['/sells']}>
+        <Route path={['/listarventas','/agregarventas','/buscarventas', '/actualizarventas' ]}>
           <PrivateLayout>
             <Switch>
-              <Route path={['/sells']}>
-                <Sells/>
+            <Route path={['/listarventas']}>
+                <ListSells/>
+              </Route> 
+              <Route path={['/agregarventas']}>
+                <AddSells/>
+              </Route> 
+              <Route path={['/buscarventas']}>
+                <SearchSells/>
+              </Route> 
+              <Route path={['/actualizarventas']}>
+                <UpdateSells/>
               </Route> 
             </Switch>
           </PrivateLayout>
         </Route> 
-        <Route path={['/login']}>
+        <Route path={['/']}>
           <LoginLayout>
             <Switch>
-              <Route path={['/login']}>
+              <Route path={['/']}>
                 <Login/>
               </Route>
             </Switch>
           </LoginLayout>
         </Route>
-        <Route path={['/']}>
+        <Route>
           <PublicLayout>
-          <Switch>
-              <Route path={['/']}>
-                <Public/>
-              </Route>
-            </Switch>
           </PublicLayout>
         </Route>
 

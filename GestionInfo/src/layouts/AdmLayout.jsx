@@ -5,7 +5,7 @@ const AdmLayout = ({children}) => {
     return (
         <div>
             <Navbar/>
-            {children}    
+            {children}  
         </div>
     )
 }

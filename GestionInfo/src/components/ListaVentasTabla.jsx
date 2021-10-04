@@ -4,20 +4,26 @@ import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const ListaProductosTabla = () => {
+
+const ListaVentasTabla = () => {
     return (
-      <div>
-        <section > 
-          <Link to='/agregarproductos'>
-          <Button color="primary" size="lg">Adicionar producto</Button></Link>{' '}
-          <Link to='/buscarproductos'><Button color="secondary" size="lg">Buscar producto</Button></Link>
+        <div>
+        <section >
+          <Link to ='/agregarventa'>
+          <Button color="primary" size="lg">Adicionar venta</Button></Link>{' '}
+        <Link to = 'buscarventas'><Button color="secondary" size="lg">Buscar venta</Button></Link>
         </section>
         <Table striped>
         <thead>
           <tr>
-            <th>Código</th>
-            <th>Descripción</th>
-            <th>Valor Unitario</th>
+            <th>Código venta</th>
+            <th>Identificación producto</th>
+            <th>Valor venta</th>
+            <th>Cantidad</th>
+            <th>Fecha venta</th>
+            <th>Documento cliente</th>
+            <th>Nombre cliente</th>
+            <th>ID Vendedor</th>
             <th>Estado</th>
             <th>Actualizar</th>
             <th>Eliminar</th>
@@ -27,30 +33,42 @@ const ListaProductosTabla = () => {
           <tr>
             <th scope="row">0001</th>
             <td>Pantalla LG 15"</td>
-            <td>300000</td>
-            <td>Disponible</td>
-            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
-            <th><Button color="danger">Eliminar producto</Button></th>
-            
+            <td>3000000</td>
+            <td>10</td>
+            <td>10/02/2021</td>
+            <td>1100200</td>
+            <td>Freddy Mercury</td>
+            <td>0123</td>
+            <td>Entregado</td>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
+            <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
           <tr>
-            <th scope="row">0002</th>
+          <th scope="row">0001</th>
             <td>Pantalla Acer 15"</td>
-            <td>200000</td>
-            <td>No disponible</td>
-            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
-            <th><Button color="danger">Eliminar producto</Button></th>
-            
+            <td>2000000</td>
+            <td>10</td>
+            <td>10/04/2021</td>
+            <td>1200200</td>
+            <td>Marvin Gaye</td>
+            <td>0124</td>
+            <td>Entregado</td>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
+            <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
           <tr>
-            <th scope="row">0003</th>
+          <th scope="row">0001</th>
             <td>Pantalla Samsung 15"</td>
-            <td>350000</td>
-            <td>Disponible</td>
-            <th><Link to= '/actualizarproducto'><Button color="primary">Actualizar producto</Button></Link></th>
-            <th><Button color="danger">Eliminar producto</Button></th>
+            <td>3500000</td>
+            <td>10</td>
+            <td>10/01/2021</td>
+            <td>1300200</td>
+            <td>Robert Plant</td>
+            <td>0125</td>
+            <td>Alistamiento</td>
+            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
+            <th><Button color="danger">Eliminar venta</Button></th>
           </tr>
-
         </tbody>
       </Table>
       <section style={{ display: "flex", width: "100%", justifyContent: "flex-end" }} >
@@ -98,4 +116,4 @@ const ListaProductosTabla = () => {
     )
 }
 
-export default ListaProductosTabla
+export default ListaVentasTabla

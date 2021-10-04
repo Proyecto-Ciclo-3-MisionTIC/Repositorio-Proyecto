@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from "../components/NavbarAdm";
+import NavbarVentas from "../components/NavbarVendedor";
 
 const PrivateLayout = ({children}) => {
     return (
         <div>
-            <Navbar/>
+            <NavbarVentas/>
             {children}
         </div>
     )

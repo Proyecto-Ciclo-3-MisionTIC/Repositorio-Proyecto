@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../media/logo4r.png';
+import { Button } from 'reactstrap';
 
 
 const NavbarPublico = () => {
@@ -7,7 +8,7 @@ const NavbarPublico = () => {
         <div className="App">
         <img src={logo} alt="technology accesories" className="logoImg"/>
         <ul className="menu">
-            <li> <button  type='submit'>Login</button> </li>
+            <li> <Button style={{ display: "flex", justifyContent: "end" }} color="danger"> > Login</Button>{' '}</li>
         </ul>
       </div>
     )
