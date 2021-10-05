@@ -1,16 +1,21 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 export const ProductForm = () => {
   return (
     <div >
-      <section > 
-      <ui className="OpcionesProductos">
-        <li><div style={{margin: "30px" }}> <Button color="primary">Ver lista de productos</Button></div></li>
-        <li><div style={{margin: "30px" }}> <Button color="primary">Buscar producto</Button></div></li>
-        <li><div style={{margin: "30px" }}> <Button color="primary">Actualizar producto</Button></div></li>
-        <li><div style={{margin: "30px" }}> <Button color="primary">Eliminar producto</Button></div></li>
-      </ui>
+       <section>
+        <ui className="OpcionesProductos">
+          <li>
+            <div style={{ margin: "30px" }}>
+              {" "}
+              <Link to ='/listarproductos'>
+              <Button color="primary">Ver lista de productos</Button>
+              </Link>
+            </div>
+          </li>
+        </ui>
       </section>
       <Form className="w-75">
         <FormGroup className="mb-3">
@@ -64,7 +69,8 @@ export const ProductForm = () => {
           style={{ display: "flex", width: "100%", justifyContent: "flex-end" }}
         >
           <Button className="mx-3">Cancelar</Button>
-          <Button color="primary">Guardar</Button>
+          <Link to= '/listarproductos'>
+          <Button color="primary">Guardar</Button></Link>
         </div>
       </Form>
     </div>
