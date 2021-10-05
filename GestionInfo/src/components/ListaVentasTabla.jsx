@@ -3,15 +3,15 @@ import { Table } from 'reactstrap';
 import { Button} from "reactstrap";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 const ListaVentasTabla = () => {
     return (
         <div>
         <section >
-          <Link to ='/agregarventa'>
-          <Button color="primary" size="lg">Adicionar venta</Button></Link>{' '}
-        <Link to = 'buscarventas'><Button color="secondary" size="lg">Buscar venta</Button></Link>
+        <NavLink to="/agregarventas" activeClassName="active" ><Button color="primary" size="lg">Adicionar venta</Button></NavLink>
+        <NavLink to="/buscarventas" activeClassName="active" ><Button color="secondary" size="lg">Buscar venta</Button></NavLink>
         </section>
         <Table striped>
         <thead>

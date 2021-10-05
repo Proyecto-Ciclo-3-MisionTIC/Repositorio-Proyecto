@@ -25,65 +25,65 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path={['/listarproductos','/agregarproductos','/buscarproductos','/actualizarproductos','/eliminarproductos','/listarroles', '/actualizarroles', '/listarventasadm','/agregarventasadm','/buscarventasadm', '/actualizarventasadm' ]}>
+        <Route path={['/listarproductos', '/agregarproductos', '/buscarproductos', '/actualizarproductos', '/eliminarproductos', '/listarroles', '/actualizarroles', '/listarventasadm', '/agregarventasadm', '/buscarventasadm', '/actualizarventasadm']}>
           <AdmLayout>
             <Switch>
-            <Route path={['/listarproductos']}>
-                <ListProducts/>
+              <Route path={['/listarproductos']}>
+                <ListProducts />
               </Route>
               <Route path={['/agregarproductos']}>
-                <AddProducts/>
+                <AddProducts />
               </Route>
               <Route path={['/buscarproductos']}>
-                <SearchProducts/>
+                <SearchProducts />
               </Route>
               <Route path={['/actualizarproductos']}>
-                <UpdateProducts/>
+                <UpdateProducts />
               </Route>
               <Route path={['/listarroles']}>
-                <ListRols/>
+                <ListRols />
               </Route>
               <Route path={['/actualizarroles']}>
-                <UpdateRols/>
+                <UpdateRols />
               </Route>
               <Route path={['/listarventasadm']}>
-                <ListSells/>
-              </Route> 
+                <ListSells />
+              </Route>
               <Route path={['/agregarventasadm']}>
-                <AddSells/>
-              </Route> 
+                <AddSells />
+              </Route>
               <Route path={['/buscarventasadm']}>
-                <SearchSells/>
-              </Route> 
+                <SearchSells />
+              </Route>
               <Route path={['/actualizarventasadm']}>
-                <UpdateSells/>
-              </Route> 
+                <UpdateSells />
+              </Route>
             </Switch>
           </AdmLayout>
-        </Route> 
-        <Route path={['/listarventas','/agregarventas','/buscarventas', '/actualizarventas' ]}>
+        </Route>
+        <Route path={['/listarventas', '/agregarventas', '/buscarventas', '/actualizarventas']}>
           <PrivateLayout>
             <Switch>
-            <Route path={['/listarventas']}>
-                <ListSells/>
-              </Route> 
+              <Route path={['/listarventas']}>
+                <ListSells />
+              </Route>
               <Route path={['/agregarventas']}>
-                <AddSells/>
-              </Route> 
+                <AddSells />
+              </Route>
               <Route path={['/buscarventas']}>
-                <SearchSells/>
-              </Route> 
+                <SearchSells />
+              </Route>
               <Route path={['/actualizarventas']}>
-                <UpdateSells/>
-              </Route> 
+                <UpdateSells />
+              </Route>
             </Switch>
           </PrivateLayout>
-        </Route> 
+        </Route>
         <Route path={['/']}>
           <LoginLayout>
             <Switch>
               <Route path={['/']}>
-                <Login/>
+                <Login />
               </Route>
             </Switch>
           </LoginLayout>
