@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-export const ProductForm = () => {
+const ProductForm = () => {
   return (
     <div >
       <section > 
@@ -70,3 +70,4 @@ export const ProductForm = () => {
     </div>
   );
 };
+export default ProductForm;

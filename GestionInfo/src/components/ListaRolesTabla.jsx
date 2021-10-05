@@ -124,4 +124,4 @@ const ListaRolesTabla = () => {
     )
 }
 
-export default ListaRolesTabla
+export default ListaRolesTabla;

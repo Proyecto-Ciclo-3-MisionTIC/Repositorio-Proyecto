@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProductForm } from "../components/ProductForm";
+import ProductForm from "../components/ProductForm";
 
 const Products = () => {
     return (
@@ -9,4 +9,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default Products;
