@@ -6,6 +6,7 @@ function Navbar() {
       <img src={logo} alt="technology accesories" className="logoImg"/>
       <ul className="menu">
           <li>Inicio</li>
+          <li>Login</li>
       </ul>
     </div>
   );

@@ -5,6 +5,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Pageinitial from "./pages/Pageinitial";
 import PrivateLayout from "./layouts/PrivateLayout";
 import AdmLayout from "./layouts/AdmLayout";
 import LoginLayout from "./layouts/LoginLayout";
@@ -79,11 +80,14 @@ function App() {
             </Switch>
           </PrivateLayout>
         </Route>
-        <Route path={['/']}>
+        <Route path={['/', '/paginainicio']}>
           <LoginLayout>
             <Switch>
               <Route path={['/']}>
                 <Login />
+              </Route>
+              <Route path={['/paginainicio']}>
+                <Pageinitial />
               </Route>
             </Switch>
           </LoginLayout>
