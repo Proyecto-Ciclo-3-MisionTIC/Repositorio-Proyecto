@@ -1,26 +1,37 @@
 import React, { useState } from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Alert } from "reactstrap";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export const ProductForm = () => {
   const [nombreProducto, setNombreProducto] = useState("");
   const [precioProducto, setPrecioProducto] = useState(0);
   const [estadoProducto, setEstadoProducto] = useState("");
+  const [error, setError] = useState(false)
+  const history = useHistory();
 
-
-  const agregarProducto = () => {
-    Axios.post("http://localhost:3001/agregarproducto", {
+  const agregarProducto = async () => {
+    const res = await Axios.post("http://localhost:3001/agregarproducto", {
       nombreProducto: nombreProducto,
-      precioProducto: precioProducto,
+      precioProducto: Number(precioProducto),
       estadoProducto: estadoProducto,
     });
+
+    if ((res.data = "enviado")) {
+      history.push("/listarproductos");
+    } else {
+      setError(true)
+      setTimeout(() => {
+        setError(false)
+      }, 5000);
+    }
   };
 
   return (
     <div>
       <section>
-        <ui className="OpcionesProductos">
+        <ul className="OpcionesProductos">
           <li>
             <div style={{ margin: "30px" }}>
               {" "}
@@ -29,8 +40,10 @@ export const ProductForm = () => {
               </Link>
             </div>
           </li>
-        </ui>
+        </ul>
       </section>
+
+
       <Form className="w-75">
         <FormGroup className="mb-3">
           <h2 className="TituloFormProductos"> Adicionar producto </h2>
@@ -62,9 +75,12 @@ export const ProductForm = () => {
         <FormGroup className="mb-3">
           <Label for="estadoProducto">Estado</Label>
           <select
+            className="select"
             type="text"
-            onChange={(e) => {setEstadoProducto(e.target.value);}}
-            name='estadoProducto'
+            onChange={(e) => {
+              setEstadoProducto(e.target.value);
+            }}
+            name="estadoProducto"
             required
             defaultValue={0}
           >
@@ -80,12 +96,14 @@ export const ProductForm = () => {
           style={{ display: "flex", width: "100%", justifyContent: "flex-end" }}
         >
           <Button className="mx-3">Cancelar</Button>
-          <Link to="/listarproductos">
-            <Button onClick={() => agregarProducto()} color="primary">
-              Guardar
-            </Button>
-          </Link>
+
+          <Button onClick={() => agregarProducto()} color="primary">
+            Guardar
+          </Button>
         </div>
+        {error && (
+          <Alert color="danger" className='mt-3'>Erro guardando producto.</Alert>
+        )}
       </Form>
     </div>
   );

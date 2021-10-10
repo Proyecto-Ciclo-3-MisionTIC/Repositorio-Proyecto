@@ -1,19 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { Table } from "reactstrap";
-import { Button } from "reactstrap";
-import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
+import { Table, Button } from "reactstrap";
+import {
+  Pagination,
+  PaginationItem,
+  PaginationLink,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import { ProductoItemRow } from "./ProductoItemRow";
 
 const ListaProductosTabla = () => {
   const [listaProductos, setListaProductos] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/listarproductos").then((response) => {
-      console.log(response);
-      setListaProductos(response.data);
+    if(!listaProductos.length) {
+      Axios.get("http://localhost:3001/listarproductos").then((response) => {
+        setListaProductos(response.data);
+      });
+    }
+  })
+
+  const executeSearch = (vl) => {
+
+    const newList = listaProductos.filter((item) => {
+      return JSON.stringify(item)
+        .toLowerCase()
+        .includes(vl?.toLowerCase());
     });
-  }, []);
+    vl ? setListaProductos(newList) : setListaProductos([])
+  };
+
   return (
     <div>
       <section>
@@ -28,9 +47,23 @@ const ListaProductosTabla = () => {
           </Button>
         </Link>
       </section>
+
+      <FormGroup className="mt-3 w-100">
+        <Label for="Search">Search</Label>
+        <Input
+          type="text"
+          onChange={(e) => {
+            executeSearch(e.target.value);
+          }}
+          name="Search"
+          id="Search"
+          placeholder="Buscar...."
+        />
+      </FormGroup>
+
       {listaProductos.map((val, key) => {
         return (
-          <Table striped>
+          <Table striped key={key}>
             <thead>
               <tr>
                 <th>Código del producto</th>
@@ -42,20 +75,7 @@ const ListaProductosTabla = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{val._id}</td>
-                <td>{val.nombreProducto}</td>
-                <td>{val.precioProducto}</td>
-                <td>{val.estadoProducto}</td>
-                <th>
-                  <Link to="/actualizarproducto">
-                    <Button color="primary">Actualizar producto</Button>
-                  </Link>
-                </th>
-                <th>
-                  <Button color="danger">Eliminar producto</Button>
-                </th>
-              </tr>
+              <ProductoItemRow val={val} />
             </tbody>
           </Table>
         );

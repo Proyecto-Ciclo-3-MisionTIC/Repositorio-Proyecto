@@ -6,7 +6,7 @@ const ActualizarVenta = () => {
     return (
         <div >
         <section>
-       <ui className="OpcionesProductos">
+       <ul className="OpcionesProductos">
          <li>
            <div style={{ margin: "30px" }}>
              {" "}
@@ -15,7 +15,7 @@ const ActualizarVenta = () => {
              </Link>
            </div>
          </li>
-       </ui>
+       </ul>
      </section>
        <Form className="w-75">
          <FormGroup className="mb-3">

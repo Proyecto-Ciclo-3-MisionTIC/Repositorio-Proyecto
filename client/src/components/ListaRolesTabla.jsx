@@ -8,7 +8,7 @@ const ListaRolesTabla = () => {
     return (
         <div>
          <section>
-        <ui className="OpcionesProductos">
+        <ul className="OpcionesProductos">
           <li>
             <div style={{ margin: "30px" }}>
               {" "}
@@ -16,7 +16,7 @@ const ListaRolesTabla = () => {
               <Button color="primary">Adicionar funcionario</Button></Link>
             </div>
           </li>
-        </ui>
+        </ul>
       </section>
         <Table striped>
         <thead>
