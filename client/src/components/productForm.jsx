@@ -102,7 +102,7 @@ export const ProductForm = () => {
           </Button>
         </div>
         {error && (
-          <Alert color="danger" className='mt-3'>Erro guardando producto.</Alert>
+          <Alert color="danger" className='mt-3'>Error guardando producto.</Alert>
         )}
       </Form>
     </div>
