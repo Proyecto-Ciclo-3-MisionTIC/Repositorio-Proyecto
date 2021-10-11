@@ -9,19 +9,27 @@ const VentaSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  cantidad: {
+  cantidadVenta: {
     type: Number,
     required: true,
   },
-  fecha: {
+  fechaVenta: {
     type: String,
     required: true,
   },
-  documentoCliente: {
+  idClienteVenta: {
     type: Number,
     required: true,
   },
-  clienteNombre: {
+  nombreClienteVenta: {
+    type: String,
+    required: true,
+  },
+  idVendedorVenta: {
+    type: Number,
+    required: true,
+  },
+  estadoVenta: {
     type: String,
     required: true,
   },
