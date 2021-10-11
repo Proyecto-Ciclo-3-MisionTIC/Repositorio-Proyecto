@@ -66,7 +66,7 @@ export const EditarProducto = ({ val, cancel }) => {
       </th>
       <th>
         <Button color="danger" onClick={() => editarProducto()}>
-          Salvar
+          Guardar
         </Button>
       </th>
     </tr>

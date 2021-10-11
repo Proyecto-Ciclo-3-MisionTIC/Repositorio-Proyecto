@@ -40,16 +40,11 @@ const ListaProductosTabla = () => {
           <Button color="primary" size="lg">
             Adicionar producto
           </Button>
-        </Link>{" "}
-        <Link to="/buscarproductos">
-          <Button color="secondary" size="lg">
-            Buscar producto
-          </Button>
         </Link>
       </section>
 
       <FormGroup className="mt-3 w-100">
-        <Label for="Search">Search</Label>
+        <Label for="Search">Buscar producto</Label>
         <Input
           type="text"
           onChange={(e) => {

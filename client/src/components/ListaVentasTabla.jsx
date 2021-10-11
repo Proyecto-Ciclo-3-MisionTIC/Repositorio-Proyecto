@@ -1,76 +1,83 @@
-import React from 'react'
-import { Table } from 'reactstrap';
-import { Button} from "reactstrap";
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Table, Button } from "reactstrap";
+import {
+  Pagination,
+  PaginationItem,
+  PaginationLink,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
+import { Link } from "react-router-dom";
+import Axios from "axios";
+import {VentaItenRow } from "./VentaItenRow";
 
 
 const ListaVentasTabla = () => {
+  const [listaVentas, setListaVentas] = useState([]);
+
+  useEffect(() => {
+    if(!listaVentas.length) {
+      Axios.get("http://localhost:3001/listarventas").then((response) => {
+        setListaVentas(response.data);
+      });
+    }
+  })
+
+  const executeSearch = (vl) => {
+
+    const newList = listaVentas.filter((item) => {
+      return JSON.stringify(item)
+        .toLowerCase()
+        .includes(vl?.toLowerCase());
+    });
+    vl ? setListaVentas(newList) : setListaVentas([])
+  };
     return (
         <div>
         <section >
           <Link to ='/agregarventa'>
-          <Button color="primary" size="lg">Adicionar venta</Button></Link>{' '}
-        <Link to = 'buscarventas'><Button color="secondary" size="lg">Buscar venta</Button></Link>
+          <Button color="primary" size="lg">Adicionar venta</Button></Link>
         </section>
-        <Table striped>
-        <thead>
-          <tr>
-            <th>Código venta</th>
-            <th>Identificación producto</th>
-            <th>Valor venta</th>
-            <th>Cantidad</th>
-            <th>Fecha venta</th>
-            <th>Documento cliente</th>
-            <th>Nombre cliente</th>
-            <th>ID Vendedor</th>
-            <th>Estado</th>
-            <th>Actualizar</th>
-            <th>Eliminar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">0001</th>
-            <td>Pantalla LG 15"</td>
-            <td>3000000</td>
-            <td>10</td>
-            <td>10/02/2021</td>
-            <td>1100200</td>
-            <td>Freddy Mercury</td>
-            <td>0123</td>
-            <td>Entregado</td>
-            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
-            <th><Button color="danger">Eliminar venta</Button></th>
-          </tr>
-          <tr>
-          <th scope="row">0001</th>
-            <td>Pantalla Acer 15"</td>
-            <td>2000000</td>
-            <td>10</td>
-            <td>10/04/2021</td>
-            <td>1200200</td>
-            <td>Marvin Gaye</td>
-            <td>0124</td>
-            <td>Entregado</td>
-            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
-            <th><Button color="danger">Eliminar venta</Button></th>
-          </tr>
-          <tr>
-          <th scope="row">0001</th>
-            <td>Pantalla Samsung 15"</td>
-            <td>3500000</td>
-            <td>10</td>
-            <td>10/01/2021</td>
-            <td>1300200</td>
-            <td>Robert Plant</td>
-            <td>0125</td>
-            <td>Alistamiento</td>
-            <th><Link to = 'actualizarventas'><Button color="primary">Actualizar venta</Button></Link></th>
-            <th><Button color="danger">Eliminar venta</Button></th>
-          </tr>
-        </tbody>
-      </Table>
+
+        <FormGroup className="mt-3 w-100">
+        <Label for="Search">Buscar venta</Label>
+        <Input
+          type="text"
+          onChange={(e) => {
+            executeSearch(e.target.value);
+          }}
+          name="Search"
+          id="Search"
+          placeholder="Buscar...."
+        />
+      </FormGroup>
+
+      {listaVentas.map((val, key) => {
+        return (
+          <Table striped key={key}>
+            <thead>
+              <tr>
+              <th>Código venta</th>
+              <th>Identificación producto</th>
+              <th>Valor venta</th>
+              <th>Cantidad</th>
+              <th>Fecha venta</th>
+              <th>Documento cliente</th>
+              <th>Nombre cliente</th>
+              <th>ID Vendedor</th>
+              <th>Estado</th>
+              <th>Actualizar</th>
+              <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <VentaItenRow val={val} />
+            </tbody>
+          </Table>
+        );
+      })}
+
       <section style={{ display: "flex", width: "100%", justifyContent: "flex-end" }} >
       <Pagination aria-label="Page navigation example">
     <PaginationItem>

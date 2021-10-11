@@ -1,10 +1,10 @@
 import React from 'react'
-import AgregarVenta from "../components/AgregarVenta";
+import {AgregarVentaForm} from "../components/AgregarVentaForm";
 
 const AddSells = () => {
     return (
         <div>
-            <AgregarVenta/>
+            <AgregarVentaForm/>
         </div>
     )
 }
