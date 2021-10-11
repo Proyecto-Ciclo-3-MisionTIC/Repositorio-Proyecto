@@ -7,6 +7,9 @@ const bluebird = require('bluebird');
 let connection;
 
 //configura el servidor para recibir datos en formato json
+const cors = require('cors');
+app.use(cors());
+app.options('*', cors());
 app.use(express.json());
 
 const data = () => {
@@ -27,9 +30,9 @@ app.listen(port, async () => {
 //  response.send("Post request");
 //})
 
-app.get("/get-rol", async (request, response) => {
-  const [rows, fields] = await connection.execute("Select * from rol;");
-  response.json(rows);
+app.get("/get-user", async (request, response) => {
+  const [rows, fields] = await connection.execute("SELECT usuario.id_usuario 'Codigo', concat(usuario.nombre, ' ', usuario.apellido) as 'Nombre', rol.descripcion 'Rol', estado_aut.descripcion 'Estado' FROM minticshop.usuario, minticshop.rol, minticshop.estado_aut WHERE minticshop.usuario.id_rol = minticshop.rol.id_rol and minticshop.usuario.id_estado_aut = minticshop.estado_aut.id_estado_aut order by id_usuario;");
+  response.json({data: rows});
   response.send("Todo ok");
 })
 
