@@ -35,6 +35,35 @@ app.post("/agregarproducto", async (req, res) => {
   }
 });
 
+app.post("/agregarventa", async (req, res) => {
+  const nombreVenta = req.body.nombreVenta;
+  const precioVenta = req.body.precioVenta;
+  const cantidadVenta = req.body.cantidadVenta;
+  const fechaVenta = req.body.fechaVenta;
+  const idClienteVenta = req.body.idClienteVenta;
+  const nombreClienteVenta = req.body.nombreClienteVenta;
+  const idVendedorVenta = req.body.idVendedorVenta;
+  const estadoVenta = req.body.estadoVenta;
+
+  const venta = new VentasModel({
+    nombreVenta: nombreVenta,
+    precioVenta: precioVenta,
+    cantidadVenta: cantidadVenta,
+    fechaVenta: fechaVenta,
+    idClienteVenta: idClienteVenta,
+    nombreClienteVenta: nombreClienteVenta,
+    idVendedorVenta: idVendedorVenta,
+    estadoVenta: estadoVenta,
+  });
+
+  try {
+    await venta.save();
+    res.send("enviadaVenta");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.put("/editarproducto", async (req, res) => {
   const id = req.body.id;
   const nombreProducto = req.body.nombreProducto;
@@ -54,6 +83,35 @@ app.put("/editarproducto", async (req, res) => {
   }
 });
 
+app.put("/editarventa", async (req, res) => {
+  const id = req.body.id;
+  const nombreVenta = req.body.nombreVenta;
+  const precioVenta = Number(req.body.precioVenta);
+  const cantidadVenta = Number(req.body.cantidadVenta);
+  const fechaVenta = req.body.fechaVenta;
+  const idClienteVenta = Number(req.body.idClienteVenta);
+  const nombreClienteVenta = req.body.nombreClienteVenta;
+  const idVendedorVenta = Number(req.body.idVendedorVenta);
+  const estadoVenta = req.body.estadoVenta;
+
+  try {
+    await VentaModel.findById(id, (err, objUpdatre) => {
+      objUpdatre.nombreVenta = nombreVenta;
+      objUpdatre.precioVenta = Number(precioVenta);
+      objUpdatre.cantidadVenta = Number(cantidadVenta);
+      objUpdatre.fechaVenta = fechaVenta;
+      objUpdatre.idClienteVenta = Number(idClienteVenta);
+      objUpdatre.nombreClienteVenta = nombreClienteVenta;
+      objUpdatre.idVendedorVenta = Number(idVendedorVenta);
+      objUpdatre.estadoVenta = estadoVenta;
+      objUpdatre.save();
+      res.send("update");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.get("/listarproductos", async (req, res) => {
   ProductoModel.find({}, (error, resultado) => {
     if (error) {
@@ -63,28 +121,26 @@ app.get("/listarproductos", async (req, res) => {
   });
 });
 
+app.get("/listarventas", async (req, res) => {
+  VentasModel.find({}, (error, resultado) => {
+    if (error) {
+      res.send(error);
+    }
+    res.send(resultado);
+  });
+});
+
+
 app.delete("/eliminar/:id", async (req, res) => {
   const id = req.params.id;
   await ProductoModel.findByIdAndRemove(id).exec()
   res.send('deleted');
 });
 
-app.get("/listarventas", async (req, res) => {
-  const venta = new VentasModel({
-    nombreVenta: "venta111",
-    precioVenta: 111,
-    cantidad: 1000,
-    fecha: "hoy",
-    documentoClient: 4444,
-    clienteNombre: "nombre",
-  });
-
-  try {
-    await venta.save();
-    res.send('envio venta')
-  } catch (error) {
-    console.log(error);
-  }
+app.delete("/eliminarventa/:id", async (req, res) => {
+  const id = req.params.id;
+  await VentasModel.findByIdAndRemove(id).exec()
+  res.send('deleted');
 });
 
 app.listen(3001, () => console.log("Server running on port 3001..."));
