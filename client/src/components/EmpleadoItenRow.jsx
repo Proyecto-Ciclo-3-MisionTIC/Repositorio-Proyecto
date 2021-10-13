@@ -1,9 +1,9 @@
 import { Button } from "reactstrap";
 import React, { useState } from "react";
-import { EditarVenta } from "./EditarVenta";
-import ModalBorrarVenta from "./ModalBorrarVenta";
+import { EditarEmpleado } from "./EditarEmpleado";
+import ModalBorrarEmpleado from "./ModalBorrarEmpleado";
 
-export const VentaItenRow = ({ val }) => {
+export const EmpleadoItenRow = ({ val }) => {
   const [showForm, setShowForm] = useState(false);
   const toggleForm = () => setShowForm(!showForm);
 
@@ -13,32 +13,27 @@ export const VentaItenRow = ({ val }) => {
   return (
     <>
       {showForm ? (
-        <EditarVenta val={val} cancel={toggleForm} />
+        <EditarEmpleado val={val} cancel={toggleForm} />
       ) : (
         <tr>
           <td>{val._id}</td>
-          <td>{val.nombreVenta}</td>
-          <td>{val.precioVenta}</td>
-          <td>{val.cantidadVenta}</td>
-          <td>{val.fechaVenta}</td>
-          <td>{val.idClienteVenta}</td>
-          <td>{val.nombreClienteVenta}</td>
-          <td>{val.idVendedorVenta}</td>
-          <td>{val.estadoVenta}</td>
+          <td>{val.nombreEmpleado}</td>
+          <td>{val.rolEmpleado}</td>
+          <td>{val.estadoEmpleado}</td>
           <th>
             <Button color="primary" onClick={toggleForm}>
-              Actualizar venta
+              Actualizar empleado
             </Button>
           </th>
           <th>
             <Button color="danger" onClick={() => toggleModal()}>
-              Eliminar venta
+              Eliminar empleado
             </Button>
           </th>
-          <ModalBorrarVenta
+          <ModalBorrarEmpleado
             id={val._id}
-            tipo="venta"
-            nombre={val.nombreVenta}
+            tipo="empleado"
+            nombre={val.nombreEmpleado}
             modal={modal}
             toggle={toggleModal}
           />

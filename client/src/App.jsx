@@ -10,6 +10,7 @@ import AdmLayout from "./layouts/AdmLayout";
 import LoginLayout from "./layouts/LoginLayout";
 import PublicLayout from "./layouts/PublicLayout";
 import ListProducts from "./pages/ListProducts";
+import AddEmployee from "./pages/AddEmployee";
 import AddProducts from "./pages/AddProducts";
 import AddSells from "./pages/AddSells";
 import ListSells from "./pages/ListSells";
@@ -22,7 +23,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path={['/listarproductos','/agregarproductos','/eliminarproductos','/listarroles', '/listarventasadm','/agregarventasadm' ]}>
+        <Route path={['/listarproductos','/agregarproductos','/listarroles', '/agregarroles', '/listarventasadm','/agregarventasadm' ]}>
           <AdmLayout>
             <Switch>
             <Route path={['/listarproductos']}>
@@ -33,6 +34,9 @@ function App() {
               </Route>
               <Route path={['/listarroles']}>
                 <ListRols/>
+              </Route>
+              <Route path={['/agregarroles']}>
+                <AddEmployee/>
               </Route>
               <Route path={['/listarventasadm']}>
                 <ListSells/>

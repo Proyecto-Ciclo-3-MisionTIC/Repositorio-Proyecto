@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const ProductoModel = require("./Models/Producto");
 const VentasModel = require("./Models/Ventas");
+const EmpleadoModel = require("./Models/Empleado");
 
 app.use(express.json());
 app.use(cors());
@@ -55,10 +56,28 @@ app.post("/agregarventa", async (req, res) => {
     idVendedorVenta: idVendedorVenta,
     estadoVenta: estadoVenta,
   });
-
   try {
     await venta.save();
     res.send("enviadaVenta");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+app.post("/agregarrol", async (req, res) => {
+  const nombreEmpleado = req.body.nombreEmpleado;
+  const rolEmpleado = req.body.rolEmpleado;
+  const estadoEmpleado = req.body.estadoEmpleado;
+
+  const empleado = new EmpleadoModel({
+    nombreEmpleado: nombreEmpleado,
+    rolEmpleado: rolEmpleado,
+    estadoEmpleado: estadoEmpleado,
+  });
+
+  try {
+    await empleado.save();
+    res.send("enviadoempleado");
   } catch (error) {
     console.log(error);
   }
@@ -95,7 +114,7 @@ app.put("/editarventa", async (req, res) => {
   const estadoVenta = req.body.estadoVenta;
 
   try {
-    await VentaModel.findById(id, (err, objUpdatre) => {
+    await VentasModel.findById(id, (err, objUpdatre) => {
       objUpdatre.nombreVenta = nombreVenta;
       objUpdatre.precioVenta = Number(precioVenta);
       objUpdatre.cantidadVenta = Number(cantidadVenta);
@@ -104,6 +123,25 @@ app.put("/editarventa", async (req, res) => {
       objUpdatre.nombreClienteVenta = nombreClienteVenta;
       objUpdatre.idVendedorVenta = Number(idVendedorVenta);
       objUpdatre.estadoVenta = estadoVenta;
+      objUpdatre.save();
+      res.send("update");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+app.put("/editarrol", async (req, res) => {
+  const id = req.body.id;
+  const nombreEmpleado = req.body.nombreEmpleado;
+  const rolEmpleado = req.body.rolEmpleado;
+  const estadoEmpleado = req.body.estadoEmpleado;
+
+  try {
+    await EmpleadoModel.findById(id, (err, objUpdatre) => {
+      objUpdatre.nombreEmpleado = nombreEmpleado;
+      objUpdatre.rolEmpleado = rolEmpleado;
+      objUpdatre.estadoEmpleado = estadoEmpleado;
       objUpdatre.save();
       res.send("update");
     });
@@ -130,17 +168,31 @@ app.get("/listarventas", async (req, res) => {
   });
 });
 
+app.get("/listarroles", async (req, res) => {
+  EmpleadoModel.find({}, (error, resultado) => {
+    if (error) {
+      res.send(error);
+    }
+    res.send(resultado);
+  });
+});
 
 app.delete("/eliminar/:id", async (req, res) => {
   const id = req.params.id;
-  await ProductoModel.findByIdAndRemove(id).exec()
-  res.send('deleted');
+  await ProductoModel.findByIdAndRemove(id).exec();
+  res.send("deleted");
 });
 
 app.delete("/eliminarventa/:id", async (req, res) => {
   const id = req.params.id;
-  await VentasModel.findByIdAndRemove(id).exec()
-  res.send('deleted');
+  await VentasModel.findByIdAndRemove(id).exec();
+  res.send("deleted");
+});
+
+app.delete("/eliminarrol/:id", async (req, res) => {
+  const id = req.params.id;
+  await EmpleadoModel.findByIdAndRemove(id).exec();
+  res.send("deleted");
 });
 
 app.listen(3001, () => console.log("Server running on port 3001..."));

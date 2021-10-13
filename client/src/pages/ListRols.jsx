@@ -1,5 +1,5 @@
 import React from 'react'
-import ListarRoles from "../components/ListaRolesTabla";
+import ListarRoles from "../components/ListaEmpleadosTabla";
 
 
 const ListRols = () => {
