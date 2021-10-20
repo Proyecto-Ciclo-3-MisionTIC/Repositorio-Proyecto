@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: "Roboto";
+}
+
+ul {
+  list-style: none;
+}
+
+.Label {
+  background-color: rgb(242, 239, 239);
+  border-width: 1px;
+  height: 50%;
+  width: 35%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: 0.1px solid rgb(107, 105, 105);
+  box-shadow: 1px 1px rgb(19, 18, 18);
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.user {
+  margin: 20px 20px 10px 0px;
+}
+.password {
+  margin: 30px 20px 2px 0px;
+  border-radius: 5px;
+}
+
+.login {
+  cursor: pointer;
+  margin: 20px 10px 5px 10px;
+  font-size: 14px;
+}
+
+.mainbutton {
+  background-color: rgb(68, 68, 233);
+  color: white;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 5px;
+  width: 140px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+a {
+  font-size: 12px;
+  margin-right: 0px;
+}
+
+.forget {
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-right: 6px;
+}
+.logo {
+  height: 40px;
+  width: 45px;
+  margin: 20px 30px 10px 10px;
+}
+
+.crear {
+  margin-top: 1px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  background: #294888;
+  color: white;
+  box-shadow: 4px 4px 8px #525252;
+  justify-content: space-between;
+}
+
+.menu > li {
+  border-right: 1px solid #ccc;
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+}
+
+.menu > li:hover {
+  cursor: pointer;
+  color: #7fc2ea;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.menu > li:last-child {
+  border-right: 1px solid transparent;
+}
+
+.logoImg {
+  margin: 10px auto;
+  display: block;
+  max-width: 35%;
+}
+
+form {
+  background: #d8dee8;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.logoGoogle{
+  margin: auto;
+  max-width: 5%;
+}
+
+.Google{
+  margin-bottom: 2px;
+}
+.Google> li:hover{
+  cursor: pointer;
+}
+
+.OpcionesProductos{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.TituloFormProductos{
+  justify-content: center;
+  display: flex;
+}
+
+
+.carousel {
+  background: pink;
+}
+
+.navbar{
+  color: white;
+}
+
+.select{
+  display: flex;
+  flex-direction: column;
+  border-radius: .25rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid #ced4da;
+}
