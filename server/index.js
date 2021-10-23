@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb+srv://gabito:gabito@crud.xxunc.mongodb.net/product?retryWrites=true&w=majority",
+  "mongodb+srv://user:user123@cluster0.ybbn2.mongodb.net/db-name?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
   }
