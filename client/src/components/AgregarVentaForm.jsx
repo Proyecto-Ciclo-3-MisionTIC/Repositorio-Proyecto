@@ -58,7 +58,7 @@ export const AgregarVentaForm = () => {
 
       <Form className="w-75">
         <FormGroup className="mb-3">
-          <h2 className="TituloFormProductos"> Adicionar producto </h2>
+          <h2 className="TituloFormProductos"> Adicionar venta </h2>
           <Label for="nombreProducto">Nombre del producto</Label>
           <Input
             type="text"
