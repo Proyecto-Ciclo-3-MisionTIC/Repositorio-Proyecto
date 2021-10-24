@@ -6,6 +6,7 @@ const cors = require("cors");
 const ProductoModel = require("./Models/Producto");
 const VentasModel = require("./Models/Ventas");
 const EmpleadoModel = require("./Models/Empleado");
+const UserModel = require("./Models/Users");
 
 app.use(express.json());
 app.use(cors());
@@ -16,6 +17,9 @@ mongoose.connect(
     useNewUrlParser: true,
   }
 );
+
+let MongoClient = require('mongodb').MongoClient;
+var url = "mongodb+srv://user:user123@cluster0.ybbn2.mongodb.net/db-name?retryWrites=true&w=majority";
 
 app.post("/agregarproducto", async (req, res) => {
   const nombreProducto = req.body.nombreProducto;
@@ -195,4 +199,39 @@ app.delete("/eliminarrol/:id", async (req, res) => {
   res.send("deleted");
 });
 
+app.get("/listarusuarios", async (req, res) => {
+  UserModel.find({}, (error, resultado) => {
+    if (error) {
+      res.send(error);
+    }
+    res.send(resultado);
+  });
+});
+
+function getByEmail(email, callback) {
+  
+  const client = new MongoClient('mongodb+srv://user:'+configuration.MONGO_PASSWORD+'@cluster0.ybbn2.mongodb.net/?retryWrites=true&w=majority');
+
+  client.connect(function (err) {
+    if (err) return callback(err);
+
+    const db = client.db('db-name');
+    const users = db.collection('users');
+
+    users.findOne({ email: email }, function (err, user) {
+      client.close();
+
+      if (err) return callback(err);
+      if (!user) return callback(null, null);
+
+      return callback(null, {
+        user_id: user._id.toString(),
+        nickname: user.nickname,
+        email: user.email
+      });
+    });
+  });
+}
+
 app.listen(3001, () => console.log("Server running on port 3001..."));
+

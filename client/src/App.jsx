@@ -14,8 +14,9 @@ import AddEmployee from "./pages/AddEmployee";
 import AddProducts from "./pages/AddProducts";
 import AddSells from "./pages/AddSells";
 import ListSells from "./pages/ListSells";
-import Login from "./pages/Login";
+import Login from "./login/LoginPage";
 import ListRols from "./pages/ListRols";
+import HomePage from "./home/HomePage";
 
 
 
@@ -63,7 +64,7 @@ function App() {
           <LoginLayout>
             <Switch>
               <Route path={['/']}>
-                <Login/>
+                <Login />
               </Route>
             </Switch>
           </LoginLayout>
