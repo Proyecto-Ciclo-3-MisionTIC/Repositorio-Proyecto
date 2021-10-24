@@ -36,7 +36,7 @@ const ListaVentasTabla = () => {
     return (
         <div>
         <section >
-          <Link to ='/agregarventa'>
+          <Link to ='/agregarventas'>
           <Button color="primary" size="lg">Adicionar venta</Button></Link>
         </section>
 
